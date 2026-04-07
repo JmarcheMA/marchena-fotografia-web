@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marchena Fotografía | Fotografía de bodas en Guatemala</title>
+    <meta name="description"
+        content="Fotografía editorial y emocional para bodas, XV años y sesiones en Guatemala. Historias reales, imágenes elegantes y momentos auténticos.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="Marchena Fotografía | Fotografía de bodas en Guatemala">
+    <meta property="og:description" content="Fotografía editorial y emocional en Guatemala.">
+    <meta property="og:image" content="https://TU-DOMINIO.com/assets/img/home/hero.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://TU-DOMINIO.com/">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #4A4A32;
+            --color-secondary: #6F6C49;
+            --color-text: #2B2B2B;
+            --color-muted: #A09081;
+            --color-accent: #C5B5A8;
+            --color-bg: #FAFAFA;
+            --color-white: #FFFFFF;
+            --color-border: rgba(43, 43, 43, 0.12);
+            --color-overlay: linear-gradient(rgba(0, 0, 0, 0.35),
+                    rgba(0, 0, 0, 0.15));
+            --container: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Libre Baskerville", serif;
+            color: #3A3A3A;
+            background: var(--color-bg);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(100% - 48px, var(--container));
+            margin: 0 auto;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-sm {
+            padding: 72px 0;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            margin: 0 0 18px;
+            font-size: clamp(32px, 5vw, 52px);
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+            line-height: 1.05;
+        }
+
+        .section-text {
+            max-width: 700px;
+            margin: 0;
+            font-size: 16px;
+            color: rgba(43, 43, 43, 0.86);
+        }
+
+        .header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 34px 0 20px;
+        }
+
+        .logo {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: none;
+            color: var(--color-white);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            position: relative;
+            font-family: "Libre Baskerville", serif;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.92);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding-bottom: 6px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.8);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            color: var(--color-white);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: url("/assets/img/home/hero.jpg") center center / cover no-repeat;
+            opacity: 0.9;
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.25),
+                    rgba(0, 0, 0, 0.05));
+            z-index: 1;
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-inner {
+            width: min(100% - 48px, 700px);
+            margin: 0 auto;
+            text-align: center;
+            padding: 40px 32px;
+            background: rgba(0, 0, 0, 0.12);
+        }
+
+        .hero h1 {
+            margin: 0 0 18px;
+            font-size: clamp(38px, 6vw, 68px);
+            line-height: 1.0;
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+        }
+
+        .hero p {
+            max-width: 680px;
+            margin: 0 auto 32px;
+            font-size: clamp(18px, 2vw, 22px);
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn,
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 24px;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            transition: 0.25s ease;
+            border: 1px solid transparent;
+        }
+
+        .btn {
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn:hover {
+            background: var(--color-secondary);
+        }
+
+        .btn-outline {
+            border-color: rgba(255, 255, 255, 0.7);
+            color: var(--color-white);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 0.95fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .value-copy p {
+            margin: 0 0 20px;
+            font-size: 18px;
+            color: rgba(43, 43, 43, 0.86);
+        }
+
+        .value-note {
+            padding: 28px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            background: #FFFFFF;
+        }
+
+        .value-note h3 {
+            margin: 0 0 12px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .portfolio-preview {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+            margin-top: 36px;
+        }
+
+        .portfolio-preview img {
+            width: 100%;
+            height: 360px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .portfolio-preview img:hover {
+            transform: scale(1.02);
+            opacity: 0.96;
+        }
+
+        .portfolio-clickable {
+            cursor: pointer;
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -42px;
+            right: 0;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 32px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        .portfolio-pos-top {
+            object-position: center top;
+        }
+
+        .portfolio-pos-bottom {
+            object-position: center bottom;
+        }
+
+        .portfolio-pos-left {
+            object-position: left center;
+        }
+
+        .portfolio-pos-right {
+            object-position: right center;
+        }
+
+        .portfolio-pos-left-strong {
+            object-position: 20% center;
+        }
+
+        .portfolio-left-focus {
+            object-position: 0% center;
+        }
+
+        .section-footer {
+            margin-top: 28px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .service-card:hover img {
+            transform: scale(1.03);
+        }
+
+        .service-card img {
+            aspect-ratio: 4 / 5;
+        }
+
+        .service-body {
+            padding: 24px;
+        }
+
+        .service-body h3 {
+            margin: 0 0 10px;
+            font-size: 30px;
+            font-family: "Cormorant Garamond", serif;
+            font-weight: 500;
+            line-height: 1.05;
+        }
+
+        .service-body p {
+            margin: 0 0 20px;
+            font-size: 16px;
+            color: rgba(43, 43, 43, 0.82);
+        }
+
+        .service-link {
+            display: inline-block;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-primary);
+        }
+
+        .video-block {
+            display: grid;
+            grid-template-columns: 1fr 0.95fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .video-embed {
+            aspect-ratio: 16 / 9;
+            background: #d7d7d0;
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+        }
+
+        .video-embed iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .video-copy p {
+            margin: 0 0 22px;
+            font-size: 18px;
+            color: rgba(43, 43, 43, 0.86);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            background: rgba(255, 255, 255, 0.62);
+            border: 1px solid var(--color-border);
+            padding: 28px;
+        }
+
+        .testimonial p {
+            margin: 0 0 18px;
+            font-size: 17px;
+        }
+
+        .testimonial span {
+            display: block;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+        }
+
+        .cta {
+            text-align: center;
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .cta .section-title {
+            margin-bottom: 14px;
+        }
+
+        .cta .section-text {
+            margin: 0 auto 28px;
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .footer {
+            padding: 28px 0;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-bg);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: rgba(43, 43, 43, 0.72);
+        }
+
+        @media (max-width: 980px) {
+
+            .value-grid,
+            .video-block,
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-preview {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav {
+                flex-direction: column;
+                gap: 16px;
+            }
+
+            .nav-links {
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .section {
+                padding: 72px 0;
+            }
+
+            .section-sm {
+                padding: 56px 0;
+            }
+
+            .container,
+            .hero-inner {
+                width: min(100% - 32px, var(--container));
+            }
+
+            .portfolio-preview {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .btn,
+            .btn-outline {
+                width: 100%;
+            }
+
+            .logo {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="/" class="logo">Marchena Fotografía</a>
+
+            <nav class="nav-links">
+                <a href="/portafolio">Portafolio</a>
+                <a href="/precios">Precios</a>
+                <a href="/videos">Videos</a>
+                <a href="/sobre-mi">Sobre mí</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-inner">
+                <h1>Fotografía que se siente, no que se posa</h1>
+                <p>
+                    Imágenes editoriales y emocionales para bodas, XV años y sesiones
+                    con una mirada elegante, auténtica y atemporal.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="/portafolio" class="btn">Ver portafolio</a>
+                    <a href="/contacto" class="btn-outline">Consultar fecha</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container value-grid">
+                <div class="value-copy">
+                    <span class="eyebrow">La experiencia</span>
+                    <h2 class="section-title">Una mirada emocional con estética editorial</h2>
+                    <p>
+                        Mi trabajo no busca únicamente documentar un evento. Busca conservar
+                        la emoción de una historia real con imágenes que se sientan elegantes,
+                        honestas y profundamente humanas.
+                    </p>
+                    <p>
+                        Cada boda, cada celebración de XV años y cada sesión tiene su propia
+                        energía. La forma de fotografiarla debe respetar eso, sin forzar
+                        momentos ni convertir la experiencia en algo rígido.
+                    </p>
+                    <p>
+                        El resultado es una colección de fotografías con intención, belleza
+                        y memoria: imágenes para revivir lo que realmente importó.
+                    </p>
+                </div>
+
+                <aside class="value-note">
+                    <h3>Para quienes valoran más que una cobertura</h3>
+                    <p>
+                        Esta experiencia está pensada para personas que desean imágenes con
+                        sensibilidad, dirección estética y una narrativa visual coherente de
+                        principio a fin.
+                    </p>
+                </aside>
+            </div>
+        </section>
+
+        <section class="section-sm">
+            <div class="container">
+                <span class="eyebrow">Portafolio</span>
+                <h2 class="section-title">Una selección de historias recientes</h2>
+                <p class="section-text">
+                    Una muestra breve de la forma en que observo la luz, la emoción
+                    y los momentos que merecen permanecer.
+                </p>
+
+                <div class="portfolio-preview">
+                    <img class="portfolio-left-focus portfolio-clickable" src="/assets/img/home/portfolio-1.jpg"
+                        alt="Preview de portafolio 1">
+                    <img class="portfolio-clickable" src="/assets/img/home/portfolio-2.jpg"
+                        alt="Preview de portafolio 2">
+                    <img class="portfolio-clickable" src="/assets/img/home/portfolio-3.jpg"
+                        alt="Preview de portafolio 3">
+                    <img class="portfolio-left-focus portfolio-clickable" src="/assets/img/home/portfolio-4.jpg"
+                        alt="Preview de portafolio 4">
+                    <img class="portfolio-clickable" src="/assets/img/home/portfolio-5.jpg"
+                        alt="Preview de portafolio 5">
+                    <img class="portfolio-clickable" src="/assets/img/home/portfolio-6.jpg"
+                        alt="Preview de portafolio 6">
+                </div>
+
+                <div class="section-footer">
+                    <a href="/portafolio" class="btn">Ver portafolio completo</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <span class="eyebrow">Servicios</span>
+                <h2 class="section-title">Coberturas pensadas para cada historia</h2>
+
+                <div class="services-grid">
+                    <article class="service-card">
+                        <img src="/assets/img/home/service-bodas.jpg" alt="Fotografía de bodas">
+                        <div class="service-body">
+                            <h3>Bodas</h3>
+                            <p>
+                                Coberturas con narrativa visual, dirección elegante y atención a los
+                                momentos que sostienen la memoria del día.
+                            </p>
+                            <a href="/precios/bodas" class="service-link">Ver detalles</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <img src="/assets/img/home/service-xv.jpg" alt="Fotografía de XV años">
+                        <div class="service-body">
+                            <h3>XV años</h3>
+                            <p>
+                                Una visión estética y emocional para celebrar una etapa irrepetible
+                                con imágenes llenas de presencia y personalidad.
+                            </p>
+                            <a href="/precios/xv/" class="service-link">Ver detalles</a>
+                        </div>
+                    </article>
+
+                    <article class="service-card">
+                        <img src="/assets/img/home/service-sesiones.jpg" alt="Fotografía de sesiones">
+                        <div class="service-body">
+                            <h3>Sesiones</h3>
+                            <p>
+                                Retratos y sesiones con una estética íntima, cuidada y natural,
+                                creados para conservar emoción y estilo.
+                            </p>
+                            <a href="/precios/sesiones/" class="service-link">Ver detalles</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-sm">
+            <div class="container video-block">
+                <div class="video-embed">
+                    <iframe src="https://www.youtube.com/embed/OhdR5VRQmtQ?si=mvqoeqeAPwedAaDT"
+                        title="Video de portafolio"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+
+                <div class="video-copy">
+                    <span class="eyebrow">Video</span>
+                    <h2 class="section-title">Movimiento, atmósfera y emoción</h2>
+                    <p>
+                        El lenguaje audiovisual complementa la experiencia fotográfica y eleva
+                        la percepción de cada historia con una presencia más envolvente.
+                    </p>
+                    <a href="/videos" class="btn">Ver videos</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <span class="eyebrow">Testimonios</span>
+                <h2 class="section-title">Palabras de quienes vivieron la experiencia</h2>
+
+                <div class="testimonials-grid">
+                    <article class="testimonial">
+                        <p>
+                            “Nos hizo sentir cómodos desde el inicio y logró capturar momentos
+                            que hoy siguen emocionándonos cada vez que volvemos a verlos.”
+                        </p>
+                        <span>Cliente de boda</span>
+                    </article>
+
+                    <article class="testimonial">
+                        <p>
+                            “Su forma de dirigir y observar fue elegante, natural y muy humana.
+                            Las fotografías superaron por mucho lo que imaginábamos.”
+                        </p>
+                        <span>Sesión editorial</span>
+                    </article>
+
+                    <article class="testimonial">
+                        <p>
+                            “No solo entregó fotos hermosas. Entregó recuerdos con intención,
+                            sensibilidad y una estética realmente cuidada.”
+                        </p>
+                        <span>Cliente de XV años</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta">
+            <div class="container">
+                <span class="eyebrow" style="color: rgba(255,255,255,0.75);">Contacto</span>
+                <h2 class="section-title">Cuéntame sobre tu evento</h2>
+                <p class="section-text">
+                    Si conectas con esta forma de ver la fotografía, será un gusto conocer
+                    tu historia y revisar disponibilidad.
+                </p>
+                <a href="/contacto" class="btn-outline">Consultar disponibilidad</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>© 2026 Marchena Fotografía</div>
+            <div>Fotografía editorial y emocional en Guatemala</div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">&times;</button>
+            <img id="lightbox-image" src="" alt="Vista ampliada">
+        </div>
+    </div>
+
+    <script>
+        const portfolioImages = document.querySelectorAll('.portfolio-clickable');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        portfolioImages.forEach((image) => {
+            image.addEventListener('click', () => {
+                lightboxImage.src = image.src;
+                lightboxImage.alt = image.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            lightboxImage.src = '';
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                lightbox.classList.remove('active');
+                lightboxImage.src = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

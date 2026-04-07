@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Bodas | Marchena Fotografía</title>
+    <meta name="description"
+        content="Explora el portafolio de bodas de Marchena Fotografía: una mirada editorial, elegante y emocional para historias reales en Guatemala.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #4A4A32;
+            --color-secondary: #6F6C49;
+            --color-text: #2B2B2B;
+            --color-bg: #FAFAFA;
+            --color-white: #FFFFFF;
+            --color-border: rgba(43, 43, 43, 0.12);
+            --container: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Libre Baskerville", serif;
+            color: #3A3A3A;
+            background: var(--color-bg);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        .container {
+            width: min(100% - 48px, var(--container));
+            margin: 0 auto;
+        }
+
+        .header {
+            padding: 34px 0 20px;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--color-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            position: relative;
+            font-family: "Libre Baskerville", serif;
+            font-size: 12px;
+            color: rgba(58, 58, 58, 0.92);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding-bottom: 6px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 1px;
+            background: rgba(58, 58, 58, 0.75);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            padding: 110px 0 60px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            margin: 0 0 16px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: 1.02;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 17px;
+            color: rgba(58, 58, 58, 0.82);
+        }
+
+        .section {
+            padding: 20px 0 120px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            cursor: pointer;
+        }
+
+        .gallery-grid img:hover {
+            transform: scale(1.02);
+            opacity: 0.97;
+        }
+
+        .cta {
+            padding: 110px 0;
+            text-align: center;
+            background: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .cta h2 {
+            margin: 0 0 16px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(34px, 5vw, 56px);
+            line-height: 1.04;
+            font-weight: 500;
+        }
+
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 28px;
+            font-size: 17px;
+            color: rgba(255, 255, 255, 0.88);
+        }
+
+        .btn-outline {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 24px;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            color: var(--color-white);
+            background: transparent;
+            transition: 0.25s ease;
+        }
+
+        .btn-outline:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .footer {
+            padding: 28px 0;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-bg);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: rgba(43, 43, 43, 0.72);
+        }
+
+        .lightbox {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.88);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 32px;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+        }
+
+        .lightbox-content {
+            position: relative;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .lightbox-content img {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: -42px;
+            right: 0;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 32px;
+            line-height: 1;
+            cursor: pointer;
+        }
+
+        @media (max-width: 980px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                width: min(100% - 32px, var(--container));
+            }
+
+            .hero {
+                padding: 90px 0 50px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 360px;
+            }
+
+            .cta {
+                padding: 80px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="/" class="logo">Marchena Fotografía</a>
+
+            <nav class="nav-links">
+                <a href="/portafolio">Portafolio</a>
+                <a href="/precios">Precios</a>
+                <a href="/videos">Videos</a>
+                <a href="/sobre-mi">Sobre mí</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <span class="eyebrow">Portafolio de bodas</span>
+                <h1>Historias reales con una mirada elegante y emocional</h1>
+                <p>
+                    Una selección de bodas fotografiadas desde la emoción, la estética
+                    editorial y la intención de conservar lo que verdaderamente importa.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="gallery-grid">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-1.jpg" alt="Fotografía de boda 1">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-2.jpg" alt="Fotografía de boda 2">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-3.jpg" alt="Fotografía de boda 3">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-4.jpg" alt="Fotografía de boda 4">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-5.jpg" alt="Fotografía de boda 5">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-6.jpg" alt="Fotografía de boda 6">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-7.jpg" alt="Fotografía de boda 7">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-8.jpg" alt="Fotografía de boda 8">
+                    <img class="wedding-clickable" src="/assets/img/bodas/boda-9.jpg" alt="Fotografía de boda 9">
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <h2>Si conectas con esta forma de ver una boda, hablemos</h2>
+                <p>
+                    Será un gusto conocer tu historia, revisar disponibilidad y mostrarte
+                    cómo podría documentarse tu día con esta misma sensibilidad.
+                </p>
+                <a href="/contacto" class="btn-outline">Consultar disponibilidad</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>© 2026 Marchena Fotografía</div>
+            <div>Fotografía editorial y emocional en Guatemala</div>
+        </div>
+    </footer>
+
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close" id="lightbox-close" aria-label="Cerrar imagen">&times;</button>
+            <img id="lightbox-image" src="" alt="Vista ampliada">
+        </div>
+    </div>
+
+    <script>
+        const weddingImages = document.querySelectorAll('.wedding-clickable');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const lightboxClose = document.getElementById('lightbox-close');
+
+        weddingImages.forEach((image) => {
+            image.addEventListener('click', () => {
+                lightboxImage.src = image.src;
+                lightboxImage.alt = image.alt;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            lightboxImage.src = '';
+        });
+
+        lightbox.addEventListener('click', (event) => {
+            if (event.target === lightbox) {
+                lightbox.classList.remove('active');
+                lightboxImage.src = '';
+            }
+        });
+    </script>
+</body>
+
+</html>

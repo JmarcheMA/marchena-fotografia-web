@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre mí | Marchena Fotografía</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #4A4A32;
+            --color-secondary: #6F6C49;
+            --color-text: #2B2B2B;
+            --color-bg: #FAFAFA;
+            --color-white: #FFFFFF;
+            --color-border: rgba(43, 43, 43, 0.12);
+            --container: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Libre Baskerville", serif;
+            color: #3A3A3A;
+            background: var(--color-bg);
+            line-height: 1.8;
+        }
+
+        .container {
+            width: min(100% - 48px, var(--container));
+            margin: 0 auto;
+        }
+
+        /* HEADER */
+        .header {
+            padding: 34px 0 20px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .nav-links a {
+            position: relative;
+            font-size: 12px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding-bottom: 6px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 1px;
+            background: rgba(58, 58, 58, 0.75);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* HERO */
+        .hero {
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #C6A96B;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        h1 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(38px, 5.5vw, 58px);
+            font-weight: 500;
+            line-height: 1.08;
+            margin: 0 0 16px;
+        }
+
+        .hero p {
+            max-width: 520px;
+            margin: 0 auto;
+            font-size: 16px;
+            color: rgba(58, 58, 58, 0.8);
+        }
+
+        /* MAIN GRID */
+        .section {
+            padding: 50px 0;
+        }
+
+        .section p {
+            max-width: 640px;
+            margin: 0 0 12px;
+            font-size: 15.5px;
+            color: rgba(58, 58, 58, 0.82);
+        }
+
+        .section+.section {
+            padding-top: 36px;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            display: block;
+        }
+
+        h2 {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 30px;
+            margin: 0 0 10px;
+            line-height: 1.2;
+        }
+
+        /* VALUES */
+        .values {
+            display: grid;
+            gap: 8px;
+            margin-top: 10px;
+            font-size: 15px;
+            color: rgba(58, 58, 58, 0.85);
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 80px 0 100px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0 24px;
+            font-size: 13px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            background: var(--color-primary);
+            color: var(--color-white);
+            transition: 0.25s ease;
+        }
+
+        .btn:hover {
+            background: var(--color-secondary);
+        }
+
+        /* FOOTER */
+        .footer {
+            padding: 28px 0;
+            border-top: 1px solid var(--color-border);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            font-size: 14px;
+            color: rgba(43, 43, 43, 0.72);
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container nav">
+            <a href="/" class="logo">Marchena Fotografía</a>
+            <nav class="nav-links">
+                <a href="/portafolio">Portafolio</a>
+                <a href="/precios">Precios</a>
+                <a href="/videos">Videos</a>
+                <a href="/sobre-mi">Sobre mí</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+                <span class="eyebrow">Sobre mí</span>
+                <h1>Una mirada enfocada en lo esencial</h1>
+                <p>Más que documentar un evento, busco preservar la emoción, la presencia y la historia que existe en
+                    cada momento.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container about-grid">
+
+                <div class="about-image">
+                    <img src="/assets/img/about/jose.jpg" alt="Fotógrafo en acción">
+                </div>
+
+                <div>
+                    <h2>Sobre mi trabajo</h2>
+                    <p>Soy fotógrafo de bodas y retratos, enfocado en crear imágenes con una estética editorial, cuidada
+                        y emocional.</p>
+                    <p>Mi trabajo no se trata solo de capturar lo que sucede, sino de interpretar cada momento con
+                        sensibilidad, atención al detalle y una intención clara en cada encuadre.</p>
+                    <p>A lo largo de los años he desarrollado una forma de trabajar donde la confianza, la calma y la
+                        observación juegan un papel clave para lograr imágenes auténticas.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Filosofía de trabajo</h2>
+                <p>Cada historia tiene su propio ritmo, su propia energía y su propia forma de ser contada.</p>
+                <p>Mi enfoque consiste en acompañar el momento sin intervenir más de lo necesario, permitiendo que las
+                    emociones fluyan de forma natural mientras cuido la estética, la luz y la composición en cada
+                    imagen.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Enfoque editorial</h2>
+                <p>No busco solo registrar lo que sucede, sino construir imágenes con intención, composición cuidada y
+                    una estética atemporal.</p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <h2>Valores</h2>
+                <div class="values">
+                    <div>Atención al detalle</div>
+                    <div>Sensibilidad en cada momento</div>
+                    <div>Dirección sutil y natural</div>
+                    <div>Coherencia visual en toda la cobertura</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="container">
+                <p>Si esta forma de ver y documentar una historia conecta contigo, será un gusto conocer más sobre tu
+                    celebración.</p>
+                <a href="/contacto" class="btn">Consultar disponibilidad</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>© 2026 Marchena Fotografía</div>
+            <div>Fotografía editorial y emocional en Guatemala</div>
+        </div>
+    </footer>
+
+</body>
+
+</html>

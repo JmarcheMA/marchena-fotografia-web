@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Marchena Fotografía</title>
+    <meta name="description"
+        content="Explora el portafolio de Marchena Fotografía: bodas, XV años, sesiones y trabajo editorial con una estética elegante y emocional.">
+    <meta name="robots" content="index, follow">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Libre+Baskerville:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --color-primary: #4A4A32;
+            --color-secondary: #6F6C49;
+            --color-text: #2B2B2B;
+            --color-bg: #FAFAFA;
+            --color-white: #FFFFFF;
+            --color-border: rgba(43, 43, 43, 0.12);
+            --container: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Libre Baskerville", serif;
+            color: #3A3A3A;
+            background: var(--color-bg);
+            line-height: 1.8;
+            font-weight: 400;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: cover;
+            transition: transform 0.6s ease, opacity 0.6s ease;
+        }
+
+        .container {
+            width: min(100% - 48px, var(--container));
+            margin: 0 auto;
+        }
+
+        .header {
+            padding: 34px 0 20px;
+            background: var(--color-bg);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: "Cormorant Garamond", serif;
+            font-size: 28px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--color-text);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            position: relative;
+            font-family: "Libre Baskerville", serif;
+            font-size: 12px;
+            color: rgba(58, 58, 58, 0.92);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            padding-bottom: 6px;
+        }
+
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 1px;
+            background: rgba(58, 58, 58, 0.75);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .hero {
+            padding: 110px 0 70px;
+            text-align: center;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-size: 12px;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--color-secondary);
+            margin-bottom: 16px;
+        }
+
+        .hero h1 {
+            margin: 0 0 16px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: clamp(40px, 7vw, 72px);
+            line-height: 1.02;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .hero p {
+            max-width: 760px;
+            margin: 0 auto;
+            font-size: 17px;
+            color: rgba(58, 58, 58, 0.82);
+        }
+
+        .section {
+            padding: 40px 0 120px;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+
+        .portfolio-card {
+            display: block;
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            overflow: hidden;
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        .portfolio-card:hover img {
+            transform: scale(1.03);
+            opacity: 0.97;
+        }
+
+        .portfolio-card img {
+            height: 460px;
+        }
+
+        .portfolio-body {
+            padding: 26px;
+        }
+
+        .portfolio-body h2 {
+            margin: 0 0 10px;
+            font-family: "Cormorant Garamond", serif;
+            font-size: 34px;
+            line-height: 1.04;
+            font-weight: 500;
+            color: var(--color-text);
+        }
+
+        .portfolio-body p {
+            margin: 0;
+            font-size: 16px;
+            color: rgba(58, 58, 58, 0.82);
+        }
+
+        .footer {
+            padding: 28px 0;
+            border-top: 1px solid var(--color-border);
+            background: var(--color-bg);
+        }
+
+        .footer-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 14px;
+            color: rgba(43, 43, 43, 0.72);
+        }
+
+        @media (max-width: 980px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .nav {
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                width: min(100% - 32px, var(--container));
+            }
+
+            .hero {
+                padding: 90px 0 50px;
+            }
+
+            .portfolio-card img {
+                height: 360px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container nav">
+            <a href="/" class="logo">Marchena Fotografía</a>
+
+            <nav class="nav-links">
+                <a href="/portafolio">Portafolio</a>
+                <a href="/precios">Precios</a>
+                <a href="/videos">Videos</a>
+                <a href="/sobre-mi">Sobre mí</a>
+                <a href="/contacto">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <span class="eyebrow">Portafolio</span>
+                <h1>Historias con emoción, estética y memoria</h1>
+                <p>
+                    Explora una selección de bodas, XV años, sesiones y trabajo editorial
+                    desde una mirada elegante, honesta y profundamente humana.
+                </p>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="portfolio-grid">
+                    <a class="portfolio-card" href="/portafolio/bodas/">
+                        <img src="/assets/img/home/service-bodas.jpg" alt="Portafolio de bodas">
+                        <div class="portfolio-body">
+                            <h2>Bodas</h2>
+                            <p>Coberturas emotivas y editoriales para historias que merecen permanecer.</p>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="/portafolio/xv/">
+                        <img src="/assets/img/home/service-xv.jpg" alt="Portafolio de XV años">
+                        <div class="portfolio-body">
+                            <h2>XV años</h2>
+                            <p>Celebraciones llenas de presencia, belleza y recuerdos con personalidad.</p>
+                        </div>
+                    </a>
+
+                    <a class="portfolio-card" href="/portafolio/sesiones/">
+                        <img src="/assets/img/home/service-sesiones.jpg" alt="Portafolio de sesiones">
+                        <div class="portfolio-body">
+                            <h2>Sesiones</h2>
+                            <p>Retratos y sesiones con una estética íntima, natural y cuidadosamente dirigida.</p>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-inner">
+            <div>© 2026 Marchena Fotografía</div>
+            <div>Fotografía editorial y emocional en Guatemala</div>
+        </div>
+    </footer>
+</body>
+
+</html>
